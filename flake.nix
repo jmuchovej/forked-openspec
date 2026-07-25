@@ -49,16 +49,16 @@
 
             pnpmDeps = pkgs.fetchPnpmDeps {
               inherit (finalAttrs) pname version src;
-              pnpm = pkgs.pnpm_9;
+              pnpm = pkgs.pnpm_10;
               fetcherVersion = 3;
-              hash = "sha256-82sVXXqj4mfe6n6BRagUiOQS0Gd+jbPOQiYzUhmrZGU=";
+              hash = "sha256-yitHBdoabDcUbaixSKmOddpwrbi/bmxDcHP3okoxVqM=";
             };
 
             nativeBuildInputs = with pkgs; [
               nodejs_22
               npmHooks.npmInstallHook
               pnpmConfigHook
-              pnpm_9
+              pnpm_10
             ];
 
             buildPhase = ''
@@ -98,7 +98,7 @@
           default = pkgs.mkShell {
             buildInputs = with pkgs; [
               nodejs_22
-              pnpm_9
+              pnpm_10
             ];
 
             shellHook = ''
